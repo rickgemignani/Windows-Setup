@@ -1,0 +1,28 @@
+
+# Install package managers and update all installed packages 
+admin script Update-WingetPackages
+admin script Install-Chocolatey
+admin script Update-ChocoPackages
+
+# Update Windows 
+admin script Install-PowerShellModule PSWindowsUpdate
+admin script Setup-WindowsUpdate -UpdateFrequency "Weekly" -UpdateTypes "Critical,Security,Feature"
+
+# Install Lenovo Update Software 
+admin script Install-LenovoUpdateTool
+
+# Basic needs software
+winget AgileBits.1Password
+choco googlechrome
+choco 7zip
+
+# Software Development Tools
+winget Microsoft.VisualStudioCode
+winget Git.Git
+admin script Setup-Git -GitUsername "Rick Gemignani" -GitEmail "me@rickgemignani.com"
+
+# productivity configs
+user script Set-PowerShell7Default
+
+# eye candy
+choco jbs

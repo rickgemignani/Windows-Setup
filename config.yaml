@@ -1,0 +1,45 @@
+# Configuration for Package Install Script
+
+# Paths for external scripts
+paths:
+  # Directory containing custom scripts to execute during the setup process
+  # Example: './scripts' where additional configuration scripts are stored
+  scripts_folder_path: "./scripts"
+
+# Winget package manager configuration
+winget:
+  # Default parameters for Winget package installations
+  # These parameters are passed to every Winget install command
+  default_parameters:
+    - "--silent"  # Install packages silently without user interaction
+    - "--accept-package-agreements"  # Automatically accept package agreements
+    - "--accept-source-agreements"  # Automatically accept source agreements for Winget repositories
+
+# Chocolatey package manager configuration
+choco:
+  # Default parameters for Chocolatey package installations
+  # These parameters are passed to every Chocolatey install command
+  default_parameters:
+    - "-y"  # Automatically confirm all prompts during installation
+
+# Scoop package manager configuration
+scoop:
+  # Default parameters for Scoop package installations
+  # This is empty as Scoop doesn't require additional default parameters by default
+  default_parameters: []
+
+# Package file configuration
+packages:
+  # Path to the file containing the list of packages to install
+  # Example: './packages.txt' where each line defines a package
+  package_file_path: "./packages.txt"
+
+# Logging configuration
+logging:
+  # Logging level for the installation process
+  # Options: 'Info', 'Warning', 'Error'
+  level: "Info"
+
+  # Path to the log file
+  # Example: './install_log.txt' where logs will be stored
+  log_file_path: "./install_log.txt"

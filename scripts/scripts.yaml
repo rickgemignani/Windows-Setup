@@ -1,0 +1,1729 @@
+- name: Adjust Cursor Thickness
+  categories: 
+    - UI & User Experience
+    - Accessibility
+    - Windows Configuration
+  description: Increases the thickness of the text cursor for better visibility when typing.
+  benefit: Improves accessibility for users with visual impairments by making the cursor easier to see.
+  risk: Minimal risk; users might find the thicker cursor visually unappealing or distracting.
+  risk_score: 1
+  popularity_score: 6
+  parameters:
+    - Cursor thickness value (e.g., 1-20)
+
+- name: Adjust Network Adapter Settings for Low Latency
+  categories: 
+    - Performance Optimization
+    - Windows Configuration
+  description: Optimizes the network adapter settings for gaming or real-time applications.
+  benefit: Reduces network latency, improving performance for gaming, video calls, or any real-time interaction.
+  risk: Incorrect configuration could lead to connection instability or reduced network performance.
+  risk_score: 4
+  popularity_score: 8
+  parameters:
+    - Adapter settings (interrupt moderation, offloading, buffer sizes)
+
+- name: Auto-hide Desktop Icons
+  categories: 
+    - UI & User Experience
+    - System Customization
+    - Windows Configuration
+  description: Automatically hides desktop icons for a clutter-free workspace.
+  benefit: Reduces visual clutter, giving the desktop a cleaner look.
+  risk: Users may temporarily lose quick access to desktop shortcuts.
+  risk_score: 2
+  popularity_score: 7
+  parameters:
+    - Enable/Disable auto-hide
+
+- name: Automate Disk Cleanup
+  categories: 
+    - System Customization
+    - Performance Optimization
+    - Storage Management
+    - Windows Configuration
+  description: Schedules regular cleanup of temporary files, cache, and logs to free up disk space.
+  benefit: Helps maintain system performance by freeing up space and preventing the buildup of unnecessary files.
+  risk: Improper configuration may result in the deletion of important files.
+  risk_score: 3
+  popularity_score: 8
+  parameters:
+    - Cleanup schedule
+    - File types to delete (temporary files, log files, etc.)
+
+- name: Automate Software Installations via Winget/Chocolatey
+  categories: 
+    - Application & Package Management
+    - Software Install
+  description: Installs or updates a predefined list of essential software using package managers like Winget or Chocolatey.
+  benefit: Saves time by automating software installations and updates, ensuring that all software is up to date.
+  risk: Misconfiguration may lead to the installation of unwanted or incorrect software.
+  risk_score: 3
+  popularity_score: 9
+  parameters:
+    - List of software packages
+    - Install/update frequency
+
+- name: Automate System Updates (Windows Updates)
+  categories: 
+    - System Customization
+    - Security
+    - Windows Configuration
+  description: Automatically checks for and installs system updates to keep the OS secure and up to date.
+  benefit: Ensures the system is running the latest security patches and features.
+  risk: Updates may introduce bugs or compatibility issues with certain software.
+  risk_score: 4
+  popularity_score: 10
+  parameters:
+    - Update frequency (daily, weekly, monthly)
+    - Update types (critical, security, feature updates)
+
+- name: Change Default Apps
+  categories: 
+    - UI & User Experience
+    - System Customization
+    - Windows Configuration
+  description: Sets default apps for specific file types, such as a preferred PDF reader or web browser.
+  benefit: Improves workflow by ensuring preferred apps are used automatically for specific file types.
+  risk: Minimal risk; misconfiguration could result in an undesired app being the default.
+  risk_score: 1
+  popularity_score: 7
+  parameters:
+    - File types
+    - Default applications
+
+- name: Change Mouse Pointer Size/Color
+  categories: 
+    - UI & User Experience
+    - Accessibility
+    - Windows Configuration
+  description: Customizes the mouse pointer size and color for better visibility or personal preference.
+  benefit: Improves visibility for users with visual impairments or makes the pointer easier to track.
+  risk: Minimal risk; customization may not appeal to all users.
+  risk_score: 1
+  popularity_score: 6
+  parameters:
+    - Pointer size (small, medium, large)
+    - Pointer color (default, custom)
+
+- name: Change Taskbar Location
+  categories: 
+    - System Customization
+    - UI & User Experience
+    - Windows Configuration
+  description: Repositions the taskbar to the top, left, or right of the screen to suit user preferences.
+  benefit: Improves user experience by allowing the taskbar to be placed in a more convenient location for personal workflow.
+  risk: Minimal risk; changing the taskbar location may confuse users accustomed to the default position.
+  risk_score: 1
+  popularity_score: 7
+  parameters:
+    - Taskbar location (top, left, right, bottom)
+
+- name: Change Windows Accent Colors
+  categories: 
+    - System Customization
+    - UI & User Experience
+  description: Personalizes system accent colors for the Start menu, taskbar, and title bars.
+  benefit: Enhances the visual appeal and personalizes the user interface for a more customized experience.
+  risk: Minimal risk; certain color choices may reduce readability.
+  risk_score: 1
+  popularity_score: 8
+  parameters:
+    - Accent color (predefined or custom)
+    - Apply accent color to Start, taskbar, and title bars
+
+- name: Check for Outdated Apps (Winget/Chocolatey)
+  categories: 
+    - Application & Package Management
+    - Software Install
+    - Tools
+  description: Checks for outdated apps installed via package managers (Winget, Chocolatey) and suggests updates.
+  benefit: Keeps software up to date, ensuring access to the latest features and security patches.
+  risk: Minimal risk; failure to update could leave software vulnerable to security risks.
+  risk_score: 2
+  popularity_score: 9
+  parameters:
+    - Software packages to check
+    - Update frequency (daily, weekly, monthly)
+
+- name: Clear Diagnostic Data
+  categories: 
+    - Privacy
+    - System Customization
+    - Windows Configuration
+  description: Deletes diagnostic data that Windows has already collected from your device.
+  benefit: Improves privacy by removing stored diagnostic data that may include sensitive system information.
+  risk: Minimal risk; clearing diagnostic data may remove useful troubleshooting information.
+  risk_score: 2
+  popularity_score: 7
+  parameters:
+    - Diagnostic data types (basic, full)
+    - Data clearing schedule (manual or automatic)
+
+- name: Configure Account Lockout Policy
+  categories: 
+    - Security
+    - Windows Configuration
+  description: Locks accounts after multiple failed login attempts to prevent brute-force attacks.
+  benefit: Enhances security by preventing unauthorized access through brute-force attacks.
+  risk: Risk of locking legitimate users out of their accounts if login attempts fail too often.
+  risk_score: 3
+  popularity_score: 8
+  parameters:
+    - Lockout threshold (number of failed attempts)
+    - Lockout duration (minutes)
+
+- name: Configure App Execution Aliases
+  categories: 
+    - System Customization
+    - Productivity
+    - Tools
+    - Windows Configuration
+  description: Set custom aliases for apps to run specific programs from the command line easily.
+  benefit: Increases productivity by allowing quicker access to frequently used apps or commands via shorter aliases.
+  risk: Misconfiguration could lead to alias conflicts or unintentional program launches.
+  risk_score: 2
+  popularity_score: 7
+  parameters:
+    - Alias name
+    - App execution path
+
+- name: Configure Disk Quotas
+  categories: 
+    - Storage Management
+    - Performance Optimization
+    - Windows Configuration
+  description: Limits the amount of disk space that individual users can consume.
+  benefit: Helps manage storage efficiently by preventing individual users from consuming excessive disk space.
+  risk: Risk of limiting essential users from accessing the disk space they need, potentially affecting performance.
+  risk_score: 3
+  popularity_score: 6
+  parameters:
+    - User accounts
+    - Disk space limit (in GB or % of total space)
+
+- name: Configure Git for Version Control
+  categories: 
+    - Software Development
+    - Tools
+  description: Sets up Git with default user credentials and configuration for version control.
+  benefit: Enables efficient version control and collaboration on software development projects.
+  risk: Incorrect configuration could lead to issues with version control, such as commit authorship errors or repository conflicts.
+  risk_score: 2
+  popularity_score: 9
+  parameters:
+    - User name
+    - User email
+    - Global or local configuration
+
+- name: Configure Group Policy for Advanced Security Settings
+  categories: 
+    - Security
+    - Windows Configuration
+  description: Leverages Group Policy to enforce advanced security configurations, such as password complexity, lockout policies, and audit logging.
+  benefit: Enhances system security by enforcing policies that ensure compliance with best practices.
+  risk: Misconfigured policies could restrict user access or reduce system usability.
+  risk_score: 4
+  popularity_score: 7
+  parameters:
+    - Group Policy objects (password complexity, lockout policy, audit logging)
+    - Enforcement level (mandatory or advisory)
+
+- name: Configure OneDrive Backup
+  categories:
+    - Backup & Recovery
+    - Cloud
+    - Storage Management
+    - Utilities
+  description: Automatically backs up Desktop, Documents, and Pictures folders to OneDrive for cloud storage.
+  benefit: Ensures important files are backed up to the cloud, protecting against data loss and allowing easy access across devices.
+  risk: Requires sufficient cloud storage space, and reliance on the cloud could be problematic without internet access.
+  risk_score: 3
+  popularity_score: 8
+  parameters:
+    - Folders to back up (Desktop, Documents, Pictures)
+    - Backup frequency
+    - Available storage quota
+
+- name: Configure Reserved Storage
+  categories:
+    - System Customization
+    - Performance Optimization
+    - Storage Management
+    - Windows Configuration
+  description: Allocates disk space for system updates and temporary files to prevent failed updates.
+  benefit: Prevents system updates from failing due to insufficient disk space, improving the reliability of Windows updates.
+  risk: Reduces available storage space for other files, potentially impacting users with limited disk space.
+  risk_score: 4
+  popularity_score: 7
+  parameters:
+    - Amount of reserved storage (in GB or %)
+
+- name: Configure Secure Boot
+  categories:
+    - Security
+    - Windows Configuration
+  description: Ensures only trusted software is loaded during boot to prevent rootkits and other malware from running.
+  benefit: Enhances system security by allowing only trusted software to execute during the boot process.
+  risk: Some older or unsigned software may not be able to boot, potentially limiting compatibility with certain applications or devices.
+  risk_score: 5
+  popularity_score: 8
+  parameters:
+    - Enable/Disable Secure Boot
+    - Custom boot certificates
+
+- name: Configure SSH for GitHub
+  categories:
+    - Security
+    - Software Development
+    - Tools
+  description: Generates and configures SSH keys for secure GitHub repository access.
+  benefit: Secures repository access by using SSH keys, eliminating the need for manual password input during Git operations.
+  risk: Mismanagement of SSH keys can lead to unauthorized access or lost access to repositories if keys are lost or compromised.
+  risk_score: 3
+  popularity_score: 9
+  parameters:
+    - Key length
+    - Key passphrase
+    - Default GitHub account
+
+- name: Configure UAC (User Account Control)
+  categories:
+    - Security
+    - Windows Configuration
+  description: Ensures that administrative actions require permission, preventing unauthorized changes to the system.
+  benefit: Adds an extra layer of security by requiring user approval for potentially harmful or administrative actions.
+  risk: Frequent UAC prompts may annoy users, and users may become desensitized and approve prompts without proper review.
+  risk_score: 3
+  popularity_score: 8
+  parameters:
+    - UAC prompt level (Always Notify, Default, Never Notify)
+
+- name: Configure Virtual Memory (Paging File) Settings
+  categories:
+    - Performance Optimization
+    - System Customization
+    - Windows Configuration
+  description: Manually configures virtual memory to optimize system performance based on usage.
+  benefit: Improves system performance by optimizing virtual memory size, especially on systems with limited physical RAM.
+  risk: Misconfiguration of virtual memory can lead to system instability or reduced performance.
+  risk_score: 4
+  popularity_score: 7
+  parameters:
+    - Initial paging file size (MB)
+    - Maximum paging file size (MB)
+
+- name: Configure VS Code for Remote Development
+  categories:
+    - Software Development
+    - Tools
+    - Productivity
+  description: Enables remote development over SSH or Docker in VS Code, allowing development on remote servers.
+  benefit: Increases productivity by enabling developers to work remotely on servers without needing to configure their local machine.
+  risk: Misconfigured connections or security vulnerabilities in SSH/Docker could expose systems to risks.
+  risk_score: 4
+  popularity_score: 8
+  parameters:
+    - Remote server address
+    - Authentication method (password, SSH key)
+    - Docker container configuration
+
+- name: Configure Windows Subsystem for Linux (WSL 2)
+  categories:
+    - WSL
+    - Software Development
+    - Windows Configuration
+  description: Enables WSL 2 to run Linux environments natively in Windows for development purposes.
+  benefit: Provides developers with a native Linux environment inside Windows without the need for dual-boot or virtual machines.
+  risk: Misconfiguration or heavy usage of WSL 2 can lead to performance degradation or compatibility issues with Windows applications.
+  risk_score: 3
+  popularity_score: 9
+  parameters:
+    - Default Linux distribution (e.g., Ubuntu)
+    - WSL version (WSL 1 or WSL 2)
+
+- name: Create Restore Point on Critical Changes
+  categories:
+    - Backup & Recovery
+    - Windows Configuration
+    - System Customization
+  description: Automatically creates a restore point before significant system updates or changes.
+  benefit: Provides a fallback option if updates or changes cause issues, allowing users to easily revert to a previous stable state.
+  risk: Overuse of restore points can consume disk space, and a restore point may not always fully restore all changes.
+  risk_score: 2
+  popularity_score: 8
+  parameters:
+    - Restore point creation frequency (before updates, daily, weekly)
+    - Disk space allocation for restore points
+
+- name: Customize Lock Screen Background
+  categories:
+    - System Customization
+    - UI & User Experience
+  description: Personalizes the lock screen background image to a user-selected photo or design.
+  benefit: Enhances the aesthetic of the lock screen and allows personalization to suit the user's style.
+  risk: Minimal risk; the selected image may not display properly on all devices or resolutions.
+  risk_score: 1
+  popularity_score: 7
+  parameters:
+    - Image file path
+    - Lock screen display options (fit, fill, center)
+
+- name: Customize Power Button Behavior
+  categories:
+    - System Customization
+    - Performance Optimization
+    - Windows Configuration
+  description: Configures the power button to either sleep, hibernate, shut down, or do nothing.
+  benefit: Increases convenience by allowing the power button to match the user’s preferences for power management.
+  risk: Misconfiguration may lead to unintended behavior (e.g., system shut down instead of sleep).
+  risk_score: 2
+  popularity_score: 6
+  parameters:
+    - Power button action (sleep, hibernate, shut down, do nothing)
+    - Behavior when lid is closed (for laptops)
+
+- name: Customize Windows Explorer Ribbon
+  categories:
+    - System Customization
+    - UI & User Experience
+  description: Tweaks the Windows Explorer ribbon to hide unnecessary options and increase efficiency.
+  benefit: Improves productivity by decluttering the user interface and providing quick access to frequently used options.
+  risk: Users may hide important functionality, requiring reconfiguration later.
+  risk_score: 2
+  popularity_score: 6
+  parameters:
+    - Ribbon items to show/hide
+
+- name: Disable 8.3 Name Creation on NTFS
+  categories:
+    - Performance Optimization
+    - Storage Management
+    - Windows Configuration
+  description: Disables the creation of legacy short filenames (8.3 format) to improve file system performance on NTFS drives.
+  benefit: Improves performance, especially on servers or systems with many files.
+  risk: Older applications requiring 8.3 filenames may not function correctly.
+  risk_score: 4
+  popularity_score: 5
+  parameters:
+    - Enable/disable 8.3 name creation
+    - Apply to all volumes or specific drives
+
+- name: Disable Advertising ID Tracking
+  categories:
+    - Privacy
+    - Security
+    - Windows Configuration
+  description: Stops Windows from tracking your activity for personalized ads.
+  benefit: Increases privacy by preventing Windows from using activity data to serve personalized advertisements.
+  risk: Some apps may lose functionality that relies on personalized ads or user tracking.
+  risk_score: 2
+  popularity_score: 8
+  parameters:
+    - Enable/disable tracking for personalized ads
+
+- name: Disable Animations for Window Minimization and Maximization
+  categories:
+    - UI & User Experience
+    - Performance Optimization
+  description: Turns off window animations to speed up operations when minimizing or maximizing windows.
+  benefit: Increases system responsiveness by reducing graphical overhead.
+  risk: Disabling animations may make transitions feel abrupt or less smooth.
+  risk_score: 1
+  popularity_score: 7
+  parameters:
+    - Enable/disable window animations
+
+- name: Disable Automatic App Installation
+  categories:
+    - Privacy
+    - Application & Package Management
+    - Windows Configuration
+  description: Prevents Windows from automatically downloading and installing suggested apps (e.g., games, trials).
+  benefit: Reduces bloatware and ensures that the system only installs apps approved by the user.
+  risk: Some features or services may be impacted if certain suggested apps are not installed.
+  risk_score: 1
+  popularity_score: 8
+  parameters:
+    - Enable/disable automatic app installation
+
+- name: Disable Background Apps
+  categories:
+    - Performance Optimization
+    - Privacy
+    - Windows Configuration
+  description: Disables apps running in the background to free up system resources.
+  benefit: Improves performance and conserves battery life on laptops by limiting background processes.
+  risk: Some apps may not work as expected when background execution is disabled.
+  risk_score: 3
+  popularity_score: 8
+  parameters:
+    - Enable/disable background apps
+    - Select specific apps to run in the background
+
+- name: Disable Camera and Microphone Access for Apps
+  categories:
+    - Privacy
+    - Security
+  description: Restricts apps from accessing your camera and microphone without explicit permission.
+  benefit: Protects user privacy by ensuring that only trusted apps have access to the camera and microphone.
+  risk: Legitimate apps may not function properly without access to the camera or microphone.
+  risk_score: 4
+  popularity_score: 9
+  parameters:
+    - Enable/disable camera and microphone access for apps
+    - Manage app-specific permissions
+
+- name: Disable Cortana
+  categories:
+    - Privacy
+    - Performance Optimization
+    - Windows Configuration
+  description: Turns off Cortana to prevent voice and activity tracking.
+  benefit: Increases privacy by disabling voice-based data collection and tracking by Cortana.
+  risk: Loss of functionality for users who rely on Cortana for voice commands or reminders.
+  risk_score: 3
+  popularity_score: 7
+  parameters:
+    - Enable/disable Cortana
+
+- name: Disable Cortana Background Task
+  categories:
+    - Performance Optimization
+    - Privacy
+    - Windows Configuration
+  description: Prevents Cortana from running in the background and using system resources.
+  benefit: Frees up system resources and reduces background activity, improving performance.
+  risk: May limit Cortana’s functionality, such as responding to voice commands.
+  risk_score: 3
+  popularity_score: 6
+  parameters:
+    - Enable/disable Cortana background task
+
+- name: Disable Delivery Optimization
+  categories:
+    - Privacy
+    - Performance Optimization
+  description: Prevents Windows from using your system resources to upload updates to other PCs on the internet.
+  benefit: Reduces internet bandwidth usage and frees up system resources by disabling peer-to-peer delivery optimization.
+  risk: Disabling delivery optimization may result in slower downloads for system updates.
+  risk_score: 2
+  popularity_score: 8
+  parameters:
+    - Enable/disable delivery optimization
+    - Limit bandwidth usage for updates
+
+- name: Disable Feedback Requests
+  categories:
+    - Privacy
+    - Windows Configuration
+  description: Prevents Windows from asking for user feedback and sending telemetry data.
+  benefit: Improves privacy by reducing data collection and feedback requests.
+  risk: Microsoft may not be able to collect helpful diagnostic data for future improvements.
+  risk_score: 1
+  popularity_score: 7
+  parameters:
+    - Enable/disable feedback requests
+    - Select telemetry level (Basic, Full, None)
+
+- name: Disable Hibernation
+  categories:
+    - Performance Optimization
+    - Storage Management
+    - Windows Configuration
+  description: Disables hibernation to free up disk space used by the hibernation file.
+  benefit: Frees up significant disk space, especially on systems with limited storage.
+  risk: Disabling hibernation removes the ability to save the system state during shutdown, reducing power-saving options.
+  risk_score: 3
+  popularity_score: 7
+  parameters:
+    - Enable/disable hibernation
+    - Delete hibernation file
+
+- name: Disable IPv6
+  categories:
+    - Performance Optimization
+    - Privacy
+    - Windows Configuration
+  description: Turns off IPv6 on network adapters to simplify network settings and reduce overhead.
+  benefit: Simplifies network configuration and may resolve certain network-related issues.
+  risk: Some modern networks and services may require IPv6 to function properly, leading to connectivity issues.
+  risk_score: 4
+  popularity_score: 6
+  parameters:
+    - Enable/disable IPv6 on network adapters
+
+- name: Disable Location Tracking
+  categories:
+    - Privacy
+    - Security
+  description: Prevents Windows and apps from accessing your location.
+  benefit: Improves privacy by preventing location-based data collection by Windows and apps.
+  risk: Disabling location services may affect apps that rely on location data, such as maps or weather apps.
+  risk_score: 3
+  popularity_score: 8
+  parameters:
+    - Enable/disable location tracking
+    - Manage app-specific location permissions
+
+- name: Disable Lock Screen Ads
+  categories:
+    - Privacy
+    - UI & User Experience
+    - Windows Configuration
+  description: Prevents advertisements and tips from appearing on the lock screen.
+  benefit: Provides a cleaner lock screen experience without unwanted ads or distractions.
+  risk: Minimal risk; loss of potentially useful tips or recommendations from Microsoft.
+  risk_score: 1
+  popularity_score: 9
+  parameters:
+    - Enable/disable lock screen ads
+
+- name: Disable Remote Desktop (if not needed)
+  categories:
+    - Security
+    - Performance Optimization
+    - Windows Configuration
+  description: Prevents unauthorized remote access by disabling Remote Desktop Protocol (RDP).
+  benefit: Improves security by reducing the attack surface for remote desktop-based attacks.
+  risk: Disabling RDP may prevent legitimate remote access, especially for IT administrators.
+  risk_score: 3
+  popularity_score: 8
+  parameters:
+    - Enable/disable Remote Desktop
+
+- name: Disable SMBv1
+  categories:
+    - Security
+    - Windows Configuration
+  description: Disables the outdated and vulnerable SMBv1 protocol to reduce security risks.
+  benefit: Improves security by preventing attacks on the outdated SMBv1 protocol, which is prone to vulnerabilities.
+  risk: Some older systems or devices that rely on SMBv1 may lose functionality.
+  risk_score: 4
+  popularity_score: 9
+  parameters:
+    - Enable/disable SMBv1 protocol
+
+- name: Disable Sticky Keys Prompt
+  categories:
+    - UI & User Experience
+    - Accessibility
+  description: Prevents the Sticky Keys prompt from interrupting typing or gaming when pressing certain key combinations.
+  benefit: Prevents interruptions caused by the Sticky Keys prompt, improving the user experience during typing or gaming sessions.
+  risk: Users who rely on Sticky Keys may have trouble accessing the feature.
+  risk_score: 2
+  popularity_score: 7
+  parameters:
+    - Enable/disable Sticky Keys prompt
+
+- name: Disable Suggested Apps
+  categories:
+    - Privacy
+    - UI & User Experience
+    - Windows Configuration
+  description: Removes app suggestions from the Start Menu for a cleaner look.
+  benefit: Reduces Start Menu clutter by removing app suggestions, providing a cleaner user interface.
+  risk: Minimal risk; users may lose exposure to potentially useful app recommendations.
+  risk_score: 1
+  popularity_score: 8
+  parameters:
+    - Enable/disable suggested apps in the Start Menu
+
+- name: Disable Syncing of Settings
+  categories:
+    - Privacy
+    - Windows Configuration
+  description: Prevents syncing of settings like passwords, app data, and themes across devices.
+  benefit: Enhances privacy by preventing personal data and preferences from syncing across multiple devices.
+  risk: Users who rely on syncing for convenience may find it difficult to manage settings across devices.
+  risk_score: 3
+  popularity_score: 7
+  parameters:
+    - Enable/disable syncing for specific settings (passwords, themes, app data)
+
+- name: Disable Windows Search Indexing
+  categories:
+    - Performance Optimization
+    - Windows Configuration
+  description: Turns off Windows Search Indexing to improve performance, particularly on systems with SSDs.
+  benefit: Reduces disk activity and increases performance on systems that don't require frequent searches.
+  risk: Search functionality may become slower without indexing, particularly for large volumes of files.
+  risk_score: 3
+  popularity_score: 7
+  parameters:
+    - Enable/disable search indexing
+    - Apply to specific drives or all drives
+
+- name: Disable Windows Telemetry Completely
+  categories:
+    - Privacy
+    - Windows Configuration
+  description: Turns off all telemetry services to maximize privacy by preventing data collection.
+  benefit: Prevents Microsoft from collecting system and usage data, improving user privacy.
+  risk: Microsoft may not receive diagnostic data that could improve system stability or security.
+  risk_score: 3
+  popularity_score: 8
+  parameters:
+    - Enable/disable telemetry
+    - Select telemetry level (Basic, Full, None)
+
+- name: Disable Windows 10/11 Background Activity Moderator
+  categories:
+    - Performance Optimization
+    - Windows Configuration
+  description: Prevents Windows from throttling apps running in the background, improving performance for active applications.
+  benefit: Ensures that background tasks do not affect the performance of foreground applications.
+  risk: Allowing all background apps to run at full power may reduce battery life or increase system resource usage.
+  risk_score: 3
+  popularity_score: 6
+  parameters:
+    - Enable/disable background activity moderation
+
+- name: Enable Audio Description
+  categories:
+    - Accessibility
+    - UI & User Experience
+  description: Provides narrated descriptions of visual content in videos for users with visual impairments.
+  benefit: Improves accessibility for visually impaired users by providing audio descriptions of visual content.
+  risk: Minimal risk; some users may find the audio description intrusive if not needed.
+  risk_score: 1
+  popularity_score: 5
+  parameters:
+    - Enable/disable audio description
+    - Volume and narration speed options
+
+- name: Enable Auto-updates for Installed Apps
+  categories:
+    - Application & Package Management
+    - Software Install
+  description: Automates updates for apps installed via package managers like Winget or Chocolatey.
+  benefit: Ensures that apps are always up to date with the latest features and security patches, improving system stability and security.
+  risk: Auto-updating apps could introduce new bugs or incompatibility with existing configurations.
+  risk_score: 3
+  popularity_score: 8
+  parameters:
+    - Frequency of updates (daily, weekly, monthly)
+    - List of apps to update
+
+- name: Enable BitLocker Encryption
+  categories:
+    - Security
+    - Storage Management
+  description: Encrypts the C: drive to protect your data from unauthorized access in case of theft or loss.
+  benefit: Protects sensitive data by encrypting it, making it inaccessible without the proper encryption key.
+  risk: Data may be permanently lost if the encryption key is lost or forgotten.
+  risk_score: 6
+  popularity_score: 9
+  parameters:
+    - Enable/disable BitLocker encryption
+    - Configure recovery key storage
+
+- name: Enable Controlled Folder Access
+  categories:
+    - Security
+    - Privacy
+  description: Restricts access to critical folders, preventing ransomware and other malware from encrypting or modifying files.
+  benefit: Protects important data from unauthorized changes by restricting access to certain folders.
+  risk: Some legitimate applications may be blocked from accessing protected folders, requiring manual configuration.
+  risk_score: 4
+  popularity_score: 8
+  parameters:
+    - Enable/disable controlled folder access
+    - List of folders to protect
+
+- name: Enable Credential Guard
+  categories:
+    - Security
+    - Windows Configuration
+  description: Protects user credentials by isolating them in a secure, hardware-based environment.
+  benefit: Prevents credential theft by isolating and protecting sensitive information from malware and hackers.
+  risk: May affect compatibility with legacy applications or authentication mechanisms.
+  risk_score: 4
+  popularity_score: 8
+  parameters:
+    - Enable/disable Credential Guard
+
+- name: Enable Dark Mode
+  categories:
+    - UI & User Experience
+    - System Customization
+  description: Enables dark mode for both system and apps to reduce eye strain and improve aesthetics in low-light environments.
+  benefit: Reduces eye strain and enhances the visual experience, especially in dark environments.
+  risk: Some users may find certain content harder to read in dark mode, particularly on low-quality screens.
+  risk_score: 1
+  popularity_score: 9
+  parameters:
+    - Enable/disable dark mode
+    - Apply to system apps or third-party apps
+
+- name: Enable Data Execution Prevention (DEP)
+  categories:
+    - Security
+    - Windows Configuration
+  description: Ensures that system memory is protected from code execution by malicious software.
+  benefit: Enhances system security by preventing the execution of potentially harmful code in certain areas of system memory.
+  risk: May cause compatibility issues with older or less common software that does not support DEP.
+  risk_score: 3
+  popularity_score: 7
+  parameters:
+    - Enable/disable DEP
+    - Configure for essential programs only or all programs
+
+- name: Enable DNS over HTTPS (DoH)
+  categories:
+    - Privacy
+    - Security
+  description: Encrypts DNS queries to improve security and privacy while browsing.
+  benefit: Protects DNS requests from being intercepted by malicious actors, improving browsing security and privacy.
+  risk: Some internet service providers (ISPs) or corporate networks may not support or allow DoH, leading to connectivity issues.
+  risk_score: 3
+  popularity_score: 8
+  parameters:
+    - Enable/disable DoH
+    - Configure DNS provider (Google, Cloudflare, custom)
+
+- name: Enable Dynamic Lock
+  categories:
+    - Security
+    - Privacy
+  description: Automatically locks your PC when your paired Bluetooth device (e.g., phone) is no longer nearby.
+  benefit: Increases security by automatically locking the computer when the user is not in proximity.
+  risk: Connectivity issues with Bluetooth devices may cause unintended locking or failure to lock the system.
+  risk_score: 3
+  popularity_score: 7
+  parameters:
+    - Enable/disable Dynamic Lock
+    - Paired Bluetooth device
+
+- name: Enable Dynamic Refresh Rate
+  categories:
+    - Performance Optimization
+    - System Customization
+  description: Allows Windows to adjust the refresh rate dynamically, saving power on displays.
+  benefit: Saves battery life on devices with variable refresh rate screens while maintaining smooth visuals when needed.
+  risk: Dynamic refresh rate adjustments may cause minor flickering or visual instability in certain applications.
+  risk_score: 2
+  popularity_score: 7
+  parameters:
+    - Enable/disable dynamic refresh rate
+    - Minimum and maximum refresh rate
+
+- name: Enable File History
+  categories:
+    - Backup & Recovery
+    - Storage Management
+    - Cloud
+  description: Continuously backs up user files (Documents, Pictures, etc.) to an external drive or network location.
+  benefit: Provides an automatic, real-time backup solution for important files, allowing easy recovery in case of accidental deletion or corruption.
+  risk: Requires sufficient storage space on the backup device, and frequent backups may consume system resources.
+  risk_score: 3
+  popularity_score: 8
+  parameters:
+    - Backup location (external drive, network folder)
+    - Folders
+
+- name: Enable Filter Keys
+  categories:
+    - Accessibility
+    - UI & User Experience
+  description: Ignores repeated keystrokes caused by holding down keys too long, helping users with motor impairments.
+  benefit: Improves typing accuracy for users with motor challenges by filtering out unintended repeated keystrokes.
+  risk: Minimal risk; users may struggle to enter rapid key sequences if the filter is set too strictly.
+  risk_score: 2
+  popularity_score: 7
+  parameters:
+    - Enable/disable filter keys
+    - Filter key settings (delay, repeat rate)
+
+- name: Enable GPU Scheduling
+  categories:
+    - Performance Optimization
+    - Tools
+  description: Activates hardware-accelerated GPU scheduling for better performance in games and intensive applications.
+  benefit: Reduces latency and improves frame rates in supported applications by offloading scheduling to the GPU.
+  risk: Compatibility issues with certain applications or drivers may arise, potentially leading to instability.
+  risk_score: 3
+  popularity_score: 7
+  parameters:
+    - Enable/disable GPU scheduling
+
+- name: Enable High Contrast Theme
+  categories:
+    - Accessibility
+    - UI & User Experience
+  description: Improves readability for users with visual impairments by enabling high contrast color schemes.
+  benefit: Enhances visibility and reduces eye strain for users who need stronger color differentiation.
+  risk: Some users may find high contrast themes visually unappealing or may not work well with all applications.
+  risk_score: 1
+  popularity_score: 8
+  parameters:
+    - Enable/disable high contrast
+    - Select high contrast theme
+
+- name: Enable High DPI Scaling
+  categories:
+    - UI & User Experience
+    - Performance Optimization
+  description: Scales UI elements for better readability on high-resolution displays.
+  benefit: Improves user experience by ensuring text and icons are legible on high-DPI screens.
+  risk: Some applications may not support high DPI scaling correctly, leading to display issues.
+  risk_score: 2
+  popularity_score: 7
+  parameters:
+    - Enable/disable high DPI scaling
+    - Configure scaling settings for specific applications
+
+- name: Enable Hyper-V
+  categories:
+    - Tools
+    - Windows Configuration
+    - Software Development
+  description: Activates Hyper-V for creating and managing virtual machines on Windows.
+  benefit: Allows users to run multiple operating systems and test software in isolated environments.
+  risk: Enabling Hyper-V may conflict with other virtualization software, such as VirtualBox or VMware.
+  risk_score: 4
+  popularity_score: 8
+  parameters:
+    - Enable/disable Hyper-V
+    - Configure virtual switch settings
+
+- name: Enable Large File Detection
+  categories:
+    - Storage Management
+    - Utilities
+  description: Scans for large files and offers suggestions for cleanup to free up space.
+  benefit: Helps users identify and manage large files that may be taking up unnecessary disk space.
+  risk: May lead to the accidental deletion of important files if users do not carefully review suggestions.
+  risk_score: 3
+  popularity_score: 6
+  parameters:
+    - Scan frequency
+    - Size threshold for large files
+
+- name: Enable Magnifier
+  categories:
+    - Accessibility
+    - UI & User Experience
+  description: Magnifies portions of the screen for better readability and accessibility.
+  benefit: Assists users with visual impairments by allowing them to zoom in on text and images.
+  risk: Overuse may lead to discomfort or confusion when navigating the interface.
+  risk_score: 2
+  popularity_score: 7
+  parameters:
+    - Enable/disable magnifier
+    - Magnification level
+
+- name: Enable Narrator
+  categories:
+    - Accessibility
+    - UI & User Experience
+  description: Provides screen reading for users with visual impairments by reading text and elements on the screen.
+  benefit: Enhances accessibility for visually impaired users, allowing them to interact with the system more easily.
+  risk: Users may find the voice output difficult to understand or distracting.
+  risk_score: 2
+  popularity_score: 7
+  parameters:
+    - Enable/disable Narrator
+    - Voice settings (speed, pitch)
+
+- name: Enable Night Light
+  categories:
+    - UI & User Experience
+    - Performance Optimization
+  description: Reduces blue light emitted from the screen to reduce eye strain in low-light environments.
+  benefit: Helps reduce eye strain and improve sleep quality by minimizing blue light exposure during evening use.
+  risk: Some users may prefer blue light for color accuracy, especially during creative tasks.
+  risk_score: 1
+  popularity_score: 8
+  parameters:
+    - Enable/disable night light
+    - Color temperature settings
+
+- name: Enable NTFS Compression on Specific Folders
+  categories:
+    - Storage Management
+    - Utilities
+  description: Compresses files on NTFS partitions to save disk space on specific folders.
+  benefit: Reduces the amount of disk space used by files, allowing for more efficient storage management.
+  risk: Compression may lead to slower access times for files, especially on slower storage devices.
+  risk_score: 3
+  popularity_score: 6
+  parameters:
+    - Folders to compress
+    - Enable/disable compression
+
+- name: Enable PowerToys
+  categories:
+    - Utilities
+    - Productivity
+  description: Installs or updates PowerToys to enhance system functionality with utilities like FancyZones for window management.
+  benefit: Provides a suite of useful tools that improve productivity and customization of the Windows environment.
+  risk: Potential conflicts with other software or features that modify window management.
+  risk_score: 2
+  popularity_score: 9
+  parameters:
+    - Enable/disable specific PowerToys features
+
+- name: Enable Process Isolation for Edge
+  categories:
+    - Security
+    - Tools
+  description: Enhances the security of Microsoft Edge by running browser processes in isolated containers.
+  benefit: Protects against potential threats by isolating each tab and extension, reducing the risk of cross-site scripting attacks.
+  risk: May increase resource usage and impact browser performance due to process isolation.
+  risk_score: 3
+  popularity_score: 7
+  parameters:
+    - Enable/disable process isolation
+
+- name: Enable Ransomware Protection via Windows Defender
+  categories:
+    - Security
+    - Privacy
+  description: Adds an additional security layer specifically designed to protect against ransomware.
+  benefit: Enhances data security by preventing unauthorized encryption of files by ransomware attacks.
+  risk: Some legitimate applications may be restricted from accessing protected folders, causing functionality issues.
+  risk_score: 4
+  popularity_score: 8
+  parameters:
+    - Enable/disable ransomware protection
+    - Configure protected folders
+
+- name: Enable Shadow Copies
+  categories:
+    - Backup & Recovery
+    - Storage Management
+  description: Enables file versioning by creating shadow copies, allowing users to restore previous versions of files.
+  benefit: Provides a safety net for file recovery, allowing users to revert to earlier file states without manual backups.
+  risk: Increased disk space usage due to stored copies; potential performance impact if not managed.
+  risk_score: 3
+  popularity_score: 7
+  parameters:
+    - Enable/disable shadow copies
+    - Configure retention settings
+
+- name: Enable SmartScreen for Apps
+  categories:
+    - Security
+    - Privacy
+  description: Warns users about potentially untrustworthy websites and apps before downloading or running them.
+  benefit: Enhances security by preventing access to harmful content and protecting against phishing attacks.
+  risk: False positives may lead to legitimate sites being flagged, causing user frustration.
+  risk_score: 2
+  popularity_score: 8
+  parameters:
+    - Enable/disable SmartScreen
+    - Configure warning levels
+
+- name: Enable Snap Assist
+  categories:
+    - UI & User Experience
+    - Productivity
+  description: Enables window snapping to easily manage multiple open windows side by side.
+  benefit: Improves multitasking efficiency by allowing users to quickly organize open applications on the screen.
+  risk: Minimal risk; users may find it confusing if they are not familiar with the feature.
+  risk_score: 1
+  popularity_score: 8
+  parameters:
+    - Enable/disable Snap Assist
+
+- name: Enable Speech Recognition
+  categories:
+    - Accessibility
+    - UI & User Experience
+  description: Allows users to control the system and perform tasks using voice commands.
+  benefit: Enhances accessibility for users with physical impairments, providing an alternative input method.
+  risk: Speech recognition may not accurately interpret commands, leading to frustration.
+  risk_score: 3
+  popularity_score: 7
+  parameters:
+    - Enable/disable speech recognition
+    - Configure voice profile
+
+- name: Enable Storage Optimization (Defrag/Trim)
+  categories:
+    - Performance Optimization
+    - Storage Management
+    - Windows Configuration
+  description: Schedules regular defragmentation for HDDs or TRIM commands for SSDs to optimize performance.
+  benefit: Enhances disk performance and longevity by organizing data on the drive and maintaining efficient read/write speeds.
+  risk: Overuse of defragmentation can lead to excessive wear on SSDs; potential temporary slowdowns during optimization.
+  risk_score: 3
+  popularity_score: 8
+  parameters:
+    - Enable/disable storage optimization
+    - Schedule frequency (daily, weekly, monthly)
+
+- name: Enable Storage Pools and Storage Spaces
+  categories:
+    - Storage Management
+    - Utilities
+  description: Creates redundant or expanded storage using multiple drives for improved data management.
+  benefit: Increases data redundancy and storage capacity, allowing for easier management of multiple drives.
+  risk: Complexity in configuration may lead to data loss if not managed correctly; requires proper understanding of RAID configurations.
+  risk_score: 4
+  popularity_score: 7
+  parameters:
+    - Type of storage pool (simple, mirror, parity)
+    - Drives to include in the pool
+
+- name: Enable Storage Sense
+  categories:
+    - Storage Management
+    - Performance Optimization
+    - Windows Configuration
+  description: Automatically deletes old files and manages disk space on a scheduled basis.
+  benefit: Frees up disk space without user intervention, improving overall system performance.
+  risk: Important files may be deleted unintentionally if not properly configured.
+  risk_score: 3
+  popularity_score: 8
+  parameters:
+    - Enable/disable Storage Sense
+    - Configure cleanup schedule
+    - File types to delete (temporary files, recycle bin, etc.)
+
+- name: Enable Tamper Protection
+  categories:
+    - Security
+    - Windows Configuration
+  description: Prevents unauthorized changes to Windows Defender settings.
+  benefit: Enhances system security by protecting critical security settings from malicious changes.
+  risk: May restrict legitimate changes by users or administrators that are necessary for system management.
+  risk_score: 3
+  popularity_score: 7
+  parameters:
+    - Enable/disable Tamper Protection
+
+- name: Enable Two-Factor Authentication (2FA) for Microsoft Account
+  categories:
+    - Security
+    - Privacy
+  description: Adds a second layer of security to the Microsoft account by requiring a second form of verification.
+  benefit: Significantly increases account security by reducing the likelihood of unauthorized access.
+  risk: Users may experience inconvenience if they lose access to their second factor (e.g., phone).
+  risk_score: 3
+  popularity_score: 9
+  parameters:
+    - Enable/disable 2FA
+    - Methods of verification (SMS, authenticator app, email)
+
+- name: Enable Ultimate Performance Power Plan
+  categories:
+    - Performance Optimization
+    - Windows Configuration
+  description: Unlocks the hidden "Ultimate Performance" power plan for high-end PCs to maximize performance.
+  benefit: Provides the best performance by minimizing power management features and maximizing resource availability.
+  risk: Increased power consumption and heat generation; may reduce battery life on portable devices.
+  risk_score: 4
+  popularity_score: 7
+  parameters:
+    - Enable/disable Ultimate Performance power plan
+
+- name: Enable Virtualization-Based Security (VBS)
+  categories:
+    - Security
+    - Windows Configuration
+  description: Uses virtualization to isolate critical system components from malware and attacks.
+  benefit: Increases system security by isolating sensitive processes, making it harder for malware to compromise the system.
+  risk: Requires compatible hardware; potential performance overhead due to virtualization.
+  risk_score: 4
+  popularity_score: 8
+  parameters:
+    - Enable/disable VBS
+    - Configure memory requirements
+
+- name: Enable Visual Notifications for Sounds
+  categories:
+    - Accessibility
+    - UI & User Experience
+  description: Replaces audio alerts with visual cues for users with hearing impairments.
+  benefit: Provides an alternative notification method for users who are deaf or hard of hearing.
+  risk: Users who rely on audio alerts may miss important notifications if visual cues are used exclusively.
+  risk_score: 2
+  popularity_score: 6
+  parameters:
+    - Enable/disable visual notifications
+    - Customize notification styles
+
+- name: Enable Wake Timers
+  categories:
+    - Utilities
+    - Windows Configuration
+  description: Allows scheduled tasks to wake the computer from sleep to perform critical actions (e.g., backups, updates).
+  benefit: Ensures essential tasks are performed without requiring user intervention to wake the device.
+  risk: May lead to unexpected wake-ups, consuming power and potentially interrupting the user's workflow.
+  risk_score: 3
+  popularity_score: 6
+  parameters:
+    - Enable/disable wake timers
+    - Configure specific tasks that can wake the computer
+
+- name: Enable Windows Firewall
+  categories:
+    - Security
+    - Windows Configuration
+  description: Ensures the firewall is active and blocks incoming connections by default.
+  benefit: Protects the system from unauthorized access and potential threats by managing incoming and outgoing traffic.
+  risk: May block legitimate applications or services, requiring manual configuration for exceptions.
+  risk_score: 3
+  popularity_score: 9
+  parameters:
+    - Enable/disable Windows Firewall
+    - Configure inbound/outbound rules
+
+- name: Enable Windows Hello for Login
+  categories:
+    - Security
+    - Accessibility
+  description: Uses biometric authentication (fingerprint, face recognition, or PIN) for logging into Windows.
+  benefit: Provides a quick and secure way to log into the system, enhancing user experience and security.
+  risk: Users may face issues if biometric hardware fails or is not recognized, potentially locking them out of their accounts.
+  risk_score: 3
+  popularity_score: 8
+  parameters:
+    - Enable/disable Windows Hello
+    - Configure biometric settings (fingerprint, face recognition)
+
+- name: Enable Windows Sandbox
+  categories:
+    - Security
+    - Utilities
+  description: Activates the Windows Sandbox feature for testing untrusted applications in an isolated environment.
+  benefit: Allows users to safely run untrusted applications without risking system integrity.
+  risk: Requires sufficient system resources and may not support all applications due to isolation.
+  risk_score: 3
+  popularity_score: 7
+  parameters:
+    - Enable/disable Windows Sandbox
+
+- name: Enable Windows Spotlight for Lock Screen
+  categories:
+    - UI & User Experience
+    - System Customization
+  description: Activates dynamic wallpapers and information for the lock screen.
+  benefit: Provides a visually appealing lock screen experience with changing backgrounds and informative content.
+  risk: May lead to increased data usage if wallpapers are downloaded frequently over a metered connection.
+  risk_score: 2
+  popularity_score: 7
+  parameters:
+    - Enable/disable Windows Spotlight
+    - Configure download settings (cellular, Wi-Fi)
+
+- name: Enable Write Caching
+  categories:
+    - Performance Optimization
+    - Storage Management
+  description: Improves disk performance by enabling write caching, which allows data to be written to cache before being written to disk.
+  benefit: Enhances system performance and responsiveness during write operations.
+  risk: Data loss may occur in case of sudden power loss if write caching is enabled without a battery backup.
+  risk_score: 4
+  popularity_score: 7
+  parameters:
+    - Enable/disable write caching
+    - Configure caching settings
+
+- name: Enable Write Caching on External Drives
+  categories:
+    - Performance Optimization
+    - Storage Management
+  description: Improves file transfer speeds for external storage by enabling write caching.
+  benefit: Increases performance during file transfers, making operations faster and more efficient.
+  risk: Data loss could occur if the external drive is removed before write operations are completed.
+  risk_score: 4
+  popularity_score: 6
+  parameters:
+    - Enable/disable write caching on external drives
+    - Configure write caching settings
+    - Safe removal settings
+
+- name: Enable/Disable Taskbar Badges
+  categories:
+    - UI & User Experience
+    - Windows Configuration
+  description: Displays or hides notification badges on taskbar icons to inform users about updates or alerts.
+  benefit: Provides quick visibility into notifications and alerts from applications pinned to the taskbar.
+  risk: Users may miss important notifications if they are hidden or disabled.
+  risk_score: 2
+  popularity_score: 6
+  parameters:
+    - Enable/disable taskbar badges
+    - Customize which apps display badges
+
+- name: Enable/Disable Transparency Effects
+  categories:
+    - UI & User Experience
+    - System Customization
+  description: Controls the transparency of windows and taskbars for a cleaner or simpler appearance.
+  benefit: Provides a more personalized visual experience based on user preferences.
+  risk: Increased transparency effects may slightly impact performance on lower-end hardware.
+  risk_score: 2
+  popularity_score: 7
+  parameters:
+    - Enable/disable transparency effects
+
+- name: Increase Taskbar Icon Size
+  categories:
+    - UI & User Experience
+    - Accessibility
+  description: Enlarges taskbar icons to improve accessibility for users with visual impairments or preferences for larger icons.
+  benefit: Enhances visibility and ease of use for users who have difficulty seeing smaller icons.
+  risk: May result in a more cluttered taskbar if too many icons are present.
+  risk_score: 1
+  popularity_score: 7
+  parameters:
+    - Icon size options (small, medium, large)
+
+- name: Install or Update 1Password
+  categories:
+    - Security
+    - Productivity
+  description: A secure password manager that helps store and manage passwords, as well as sensitive information.
+  benefit: Enhances security by generating and storing complex passwords, reducing the risk of unauthorized access.
+  risk: Potential loss of access to accounts if the master password is forgotten; depends on a secure device for operation.
+  risk_score: 3
+  popularity_score: 9
+  parameters:
+    - Enable/disable auto-fill
+    - Configure password sharing settings
+
+- name: Install or Update Anaconda
+  categories:
+    - Software Development
+    - Tools
+  description: Sets up Anaconda for managing Python environments, especially for data science and machine learning.
+  benefit: Simplifies package management and deployment of Python applications, particularly in data science.
+  risk: May require significant disk space; some users may find the interface complex initially.
+  risk_score: 3
+  popularity_score: 8
+  parameters:
+    - Install/update specific packages
+    - Create virtual environments
+
+- name: Install or Update Database Management Tools (pgAdmin, MySQL Workbench)
+  categories:
+    - Software Development
+    - Tools
+  description: Installs or updates database management tools for interacting with databases.
+  benefit: Provides a user-friendly interface for managing databases, running queries, and visualizing data.
+  risk: Complexity may overwhelm new users; potential compatibility issues with specific database versions.
+  risk_score: 2
+  popularity_score: 8
+  parameters:
+    - Choose specific database tool to install
+    - Configure connection settings
+
+- name: Install or Update Development Tools
+  categories:
+    - Software Development
+    - Tools
+  description: Automates the installation of essential development tools like VS Code, WSL, and Python.
+  benefit: Streamlines the setup process for developers, ensuring all necessary tools are installed and updated.
+  risk: May install unwanted components if not carefully selected; requires adequate permissions to install.
+  risk_score: 3
+  popularity_score: 9
+  parameters:
+    - Choose tools to install
+    - Specify installation paths
+
+- name: Install or Update Docker
+  categories:
+    - Software Development
+    - Tools
+  description: Sets up Docker for containerized development and deployment environments.
+  benefit: Facilitates the development and deployment of applications in isolated environments, improving consistency.
+  risk: Requires familiarity with container technology; may have performance overhead on some systems.
+  risk_score: 4
+  popularity_score: 9
+  parameters:
+    - Enable/disable Docker daemon
+    - Configure default storage location
+
+- name: Install or Update Dropbox
+  categories:
+    - Cloud
+    - Storage Management
+  description: A cloud storage service for file sharing, synchronization, and backup.
+  benefit: Allows users to access files from anywhere and collaborate easily with others.
+  risk: Dependence on internet connectivity; potential privacy concerns regarding stored files.
+  risk_score: 3
+  popularity_score: 8
+  parameters:
+    - Enable/disable automatic syncing
+    - Configure shared folder settings
+
+- name: Install or Update ExpressVPN
+  categories:
+    - Security
+    - Privacy
+  description: A virtual private network (VPN) service that encrypts your internet connection for privacy and security.
+  benefit: Protects user data and enhances privacy while browsing, especially on public Wi-Fi networks.
+  risk: May lead to slower internet speeds; potential complications with accessing certain content.
+  risk_score: 4
+  popularity_score: 8
+  parameters:
+    - Enable/disable VPN
+    - Choose server location
+
+- name: Install or Update Fira Code Font (for VS Code)
+  categories:
+    - Software Development
+    - Tools
+  description: Installs or updates Fira Code font with programming ligatures for improved code readability.
+  benefit: Enhances coding experience by providing a clearer, more aesthetically pleasing font with ligatures.
+  risk: Compatibility issues with certain editors or themes; may not be preferred by all users.
+  risk_score: 1
+  popularity_score: 7
+  parameters:
+    - Enable/disable ligatures
+    - Choose font size
+
+- name: Install or Update Git
+  categories:
+    - Software Development
+    - Tools
+  description: A distributed version control system for tracking changes in source code during software development.
+  benefit: Facilitates collaboration among developers and provides version control for projects.
+  risk: Requires understanding of Git concepts for effective use; potential for data loss if commands are misused.
+  risk_score: 3
+  popularity_score: 10
+  parameters:
+    - Enable/disable global configurations
+    - Configure default text editor
+
+- name: Install or Update GitHub CLI
+  categories:
+    - Software Development
+    - Tools
+  description: Installs or updates the GitHub CLI for interacting with repositories from the terminal.
+  benefit: Streamlines interactions with GitHub repositories, allowing for quick command-line operations.
+  risk: Requires familiarity with command-line interface; may not support all GitHub features.
+  risk_score: 2
+  popularity_score: 7
+  parameters:
+    - Configure authentication methods
+    - Set default repository
+
+- name: Install or Update GitHub Desktop
+  categories:
+    - Software Development
+    - Tools
+  description: A desktop GUI for GitHub, making it easier to interact with repositories.
+  benefit: Provides a user-friendly interface for managing GitHub repositories, making Git more accessible.
+  risk: Potential for missing advanced Git features compared to command-line usage; can be resource-intensive.
+  risk_score: 2
+  popularity_score: 8
+  parameters:
+    - Enable/disable auto-sync
+    - Choose default repository location
+
+- name: Install or Update Google Drive
+  categories:
+    - Cloud
+    - Storage Management
+  description: Cloud storage and file synchronization service that allows file sharing and collaboration.
+  benefit: Provides access to files from anywhere and supports real-time collaboration on documents.
+  risk: Potential privacy concerns regarding file content stored in the cloud; requires internet access for full functionality.
+  risk_score: 3
+  popularity_score: 8
+  parameters:
+    - Enable/disable backup of specific folders
+    - Configure shared file permissions
+
+- name: Install or Update IntelliJ IDEA/Other IDEs
+  categories:
+    - Software Development
+    - Tools
+  description: Installs or updates IntelliJ IDEA or other IDEs for languages like Java and Kotlin.
+  benefit: Provides powerful tools for software development, including debugging, refactoring, and version control integration.
+  risk: Can be resource-intensive; may have a learning curve for new users.
+  risk_score: 3
+  popularity_score: 8
+  parameters:
+    - Enable/disable plugins
+    - Configure project settings
+
+- name: Install or Update Jupyter Notebooks
+  categories:
+    - Software Development
+    - Tools
+  description: Installs or updates Jupyter for interactive development, data science, and machine learning.
+  benefit: Enables interactive computing and data visualization, making it easier to explore data.
+  risk: Requires familiarity with Python and data science concepts; potential performance issues with large datasets.
+  risk_score: 3
+  popularity_score: 8
+  parameters:
+    - Enable/disable specific kernels
+    - Configure notebook settings
+
+- name: Install or Update Kubernetes (kubectl and Minikube)
+  categories:
+    - Software Development
+    - Tools
+  description: Installs or updates Kubernetes tools for managing clusters and local development environments.
+  benefit: Facilitates container orchestration and management, making it easier to deploy applications.
+  risk: Requires understanding of Kubernetes concepts for effective use; can be complex to configure.
+  risk_score: 4
+  popularity_score: 7
+  parameters:
+    - Choose Kubernetes distribution
+    - Configure cluster settings
+
+- name: Install or Update Linting Tools
+  categories:
+    - Software Development
+    - Tools
+  description: Installs or updates linters like ESLint or Pylint to enforce consistent code quality and best practices.
+  benefit: Helps maintain code quality by catching errors and enforcing coding standards early in the development process.
+  risk: False positives may lead to unnecessary code changes or frustration for developers.
+  risk_score: 2
+  popularity_score: 7
+  parameters:
+    - Enable/disable specific linters
+    - Configure linting rules
+
+- name: Install or Update Minecraft Launcher
+  categories:
+    - Entertainment
+    - Software Install
+  description: A launcher for the Minecraft game that manages installations, updates, and configurations.
+  benefit: Simplifies the process of installing and updating Minecraft, providing access to different versions and mods.
+  risk: Requires adequate disk space; potential conflicts with mods or server settings.
+  risk_score: 2
+  popularity_score: 9
+  parameters:
+    - Enable/disable automatic updates
+    - Configure installation paths
+
+- name: Install or Update Node.js and NPM
+  categories:
+    - Software Development
+    - Tools
+  description: Installs or updates Node.js and NPM for JavaScript backend or frontend development.
+  benefit: Provides a robust platform for developing server-side applications and managing dependencies.
+  risk: Potential compatibility issues with existing projects if the version is not compatible.
+  risk_score: 3
+  popularity_score: 9
+  parameters:
+    - Choose Node.js version
+    - Enable/disable NPM
+
+- name: Install or Update Notion
+  categories:
+    - Productivity
+    - Cloud
+  description: A powerful all-in-one workspace for note-taking, project management, and collaboration.
+  benefit: Enhances organization and productivity by allowing users to manage projects, tasks, and notes in one place.
+  risk: Reliance on an internet connection for full functionality; potential privacy concerns with stored data.
+  risk_score: 3
+  popularity_score: 8
+  parameters:
+    - Enable/disable sync
+    - Configure workspace settings
+
+- name: Install or Update Plex
+  categories:
+    - Entertainment
+    - Cloud
+  description: A media server platform for organizing and streaming personal media files to various devices.
+  benefit: Provides a centralized location for accessing and streaming media across different devices.
+  risk: Requires significant bandwidth for streaming; potential issues with transcoding on lower-end devices.
+  risk_score: 3
+  popularity_score: 8
+  parameters:
+    - Configure library settings
+    - Enable/disable remote access
+
+- name: Install or Update Postman
+  categories:
+    - Software Development
+    - Tools
+  description: Installs or updates Postman for API testing and development.
+  benefit: Simplifies the process of testing APIs, allowing for quick iterations and collaboration.
+  risk: Requires understanding of API concepts for effective use; may encounter performance issues with large requests.
+  risk_score: 2
+  popularity_score: 8
+  parameters:
+    - Enable/disable automatic updates
+    - Configure workspace settings
+
+- name: Install or Update PowerToys
+  categories:
+    - Utilities
+    - Productivity
+  description: A set of utilities for power users to customize and improve Windows productivity.
+  benefit: Provides various tools to enhance workflow and system functionality, improving user efficiency.
+  risk: Potential conflicts with existing software or settings; may consume additional system resources.
+  risk_score: 2
+  popularity_score: 9
+  parameters:
+    - Enable/disable specific utilities
+    - Configure utility settings
+
+- name: Install or Update Pyenv
+  categories:
+    - Software Development
+    - Tools
+  description: Manages multiple versions of Python to ensure compatibility across different projects.
+  benefit: Facilitates easy switching between Python versions for different projects, reducing version conflicts.
+  risk: Requires understanding of Python version management; may cause confusion for new users.
+  risk_score: 3
+  popularity_score: 7
+  parameters:
+    - Install specific Python versions
+    - Configure global and local Python versions
+
+- name: Install or Update Python and Pip
+  categories:
+    - Software Development
+    - Tools
+  description: Installs or updates Python and its package manager, Pip, for Python development.
+  benefit: Ensures that the latest version of Python and Pip are available for development tasks.
+  risk: Potential compatibility issues with existing projects if not managed properly.
+  risk_score: 3
+  popularity_score: 9
+  parameters:
+    - Choose Python version
+    - Enable/disable Pip installation
+
+- name: Install or Update RescueTime
+  categories:
+    - Productivity
+    - Utilities
+  description: A time management and productivity software that tracks time spent on different applications and websites.
+  benefit: Provides insights into productivity patterns, helping users manage their time more effectively.
+  risk: Requires user consent for tracking; potential privacy concerns regarding data collection.
+  risk_score: 3
+  popularity_score: 7
+  parameters:
+    - Enable/disable tracking
+    - Set tracking categories
+
+- name: Install or Update Steam
+  categories:
+    - Entertainment
+    - Software Install
+  description: A digital distribution platform for video games that also offers community features like chat, groups, and game streaming.
+  benefit: Provides access to a vast library of games and facilitates social interaction among gamers.
+  risk: Dependency on an internet connection for access to games; potential for account security issues.
+  risk_score: 4
+  popularity_score: 9
+  parameters:
+    - Enable/disable game updates
+    - Configure download locations
+
+- name: Install or Update Sublime Text
+  categories:
+    - Software Development
+    - Tools
+  description: A lightweight and fast text editor for coding, markup, and prose.
+  benefit: Offers a flexible and efficient editing environment with extensive plugin support.
+  risk: May lack some advanced features found in other IDEs; potential for high resource usage with many plugins.
+  risk_score: 2
+  popularity_score: 8
+  parameters:
+    - Enable/disable plugins
+    - Configure editor settings
+
+- name: Install or Update Terraform
+  categories:
+    - Software Development
+    - Tools
+  description: Installs or updates Terraform for managing infrastructure as code across different cloud providers.
+  benefit: Simplifies the process of managing infrastructure, enabling version control and automation.
+  risk: Requires understanding of infrastructure concepts; potential configuration complexity.
+  risk_score: 4
+  popularity_score: 7
+  parameters:
+    - Enable/disable specific providers
+    - Configure state storage settings
+
+- name: Install or Update tmux (on WSL)
+  categories:
+    - Software Development
+    - WSL
+  description: Installs or updates tmux to manage multiple terminal sessions in one window.
+  benefit: Enhances productivity by allowing users to create and manage multiple terminal sessions easily.
+  risk: Requires familiarity with terminal commands; potential complexity in configuration.
+  risk_score: 3
+  popularity_score: 7
+  parameters:
+    - Enable/disable specific features
+    - Configure session settings
+
+- name: Install or Update Vagrant
+  categories:
+    - Software Development
+    - Tools
+  description: Installs or updates Vagrant for building and managing reproducible virtual development environments.
+  benefit: Simplifies the setup and management of development environments, ensuring consistency.
+  risk: Requires knowledge of Vagrant configurations; may lead to resource management issues.
+  risk_score: 4
+  popularity_score: 7
+  parameters:
+    - Enable/disable specific boxes
+    - Configure provision settings
+
+- name: Install or Update Visual Studio Build Tools
+  categories:
+    - Software Development
+    - Tools
+  description: Installs or updates build tools required for compiling C++ or Node.js projects.
+  benefit: Provides essential tools for building and compiling projects, improving development efficiency.
+  risk: Potential compatibility issues with existing projects or configurations; may require additional setup.
+  risk_score: 3
+  popularity_score: 8
+  parameters:
+    - Choose components to install
+    - Configure installation paths
+
+- name: Install or Update Visual Studio Code (VS Code)
+  categories:
+    - Software Development
+    - Tools
+  description: A lightweight but powerful source code editor with built-in support for various programming languages and extensions.
+  benefit: Offers flexibility and extensive features for developers, improving coding efficiency and project management.
+  risk: May consume significant system resources with many extensions; initial setup may require configuration.
+  risk_score: 3
+  popularity_score: 9
+  parameters:
+    - Enable/disable specific extensions
+    - Configure user settings
+
+- name: Install or Update Visual Studio Code Extensions
+  categories:
+    - Software Development
+    - Tools
+  description: Installs or updates helpful extensions like Python, ESLint, Prettier, and Live Share for code collaboration.
+  benefit: Enhances functionality of VS Code by adding tools tailored to specific development needs.
+  risk: Over-reliance on extensions may lead to performance issues; conflicts between extensions can occur.
+  risk_score: 3
+  popularity_score: 8
+  parameters:
+    - Choose specific extensions to install
+    - Enable/disable extensions
+
+- name: Install or Update WhatsApp
+  categories:
+    - Communication
+    - Utilities
+  description: A messaging and voice-over-IP service allowing text, voice, and video communication.
+  benefit: Provides a convenient platform for communication, supporting various media types and group chats.
+  risk: Requires internet access for full functionality; potential privacy concerns regarding data collection.
+  risk_score: 3
+  popularity_score: 9
+  parameters:
+    - Enable/disable notifications
+    - Configure privacy settings
+
+- name: Install or Update Zsh & Oh My Zsh (on WSL)
+  categories:
+    - WSL
+    - Tools
+  description: Installs or updates Zsh and Oh My Zsh for a more productive shell environment.
+  benefit: Enhances the command-line interface with additional features, improving user productivity and experience.
+  risk: Requires knowledge of shell commands and configurations; may introduce complexity for new users.
+  risk_score: 3
+  popularity_score: 7
+  parameters:
+    - Enable/disable specific plugins
+    - Configure theme settings
