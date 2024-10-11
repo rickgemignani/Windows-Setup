@@ -5,7 +5,7 @@ $libraryPath = $PSScriptRoot
 
 function Install-Package {
     param (
-        [Parameter(Mandatory = $true)]
+        [Parameter(Mandatory = $true, Position = 0)]
         [ValidateNotNullOrEmpty()]
         [string]$PackageLine
     )
@@ -143,36 +143,55 @@ function Install-Package {
 # Function to install all packages from the unified package file
 function Install-AllPackages {
     [CmdletBinding()]
-    param ()
+    param (
+        [Parameter(Mandatory = $false, Position = 0)]  # Ensure this is the first parameter
+        [string]$PackagesFilePath = "./packages.txt",  # Default value from config or parameter
 
-    # Load variables from configuration or parameters
-    if ($PackagesFile) {
-        $packagesFilePath = Resolve-Path -Path $PackagesFile -ErrorAction Stop
-    } else {
-        $packagesFilePath = Resolve-Path -Path $config.packages.package_file_path -ErrorAction Stop
+        [Parameter(Mandatory = $false, Position = 1)]  # Incremental flag as second parameter
+        [switch]$Incremental
+    )
+
+    # Assume we have a temp files path configuration in $config
+    $tempPath = $config.paths.temp_files_path
+    
+    if (-not (Test-Path -Path $tempPath -PathType Container)) {
+        New-Item -Path $tempPath -ItemType Directory -Force | Out-Null
+        Write-Host "Created directory: $tempPath"
     }
 
-    # Check if the package file exists
-    if (-not (Test-Path $packagesFilePath)) {
-        Log-Message "The specified package file '$packagesFilePath' does not exist." -LogLevel "Error"
-        return
+    # Use tempPath for the hash and last processed packages file
+    $lastProcessedFilePath = Join-Path -Path $tempPath -ChildPath "last_processed_packages.txt"
+
+    # Check if the package file has changed or if incremental is not enabled
+    $packageLines = Get-Content -Path $PackagesFilePath -Encoding UTF8 | Where-Object {
+        # Remove lines that are empty or start with a comment character (#)
+        -not [string]::IsNullOrWhiteSpace($_) -and -not $_.Trim().StartsWith("#")
     }
 
-    # Read the packages from the file with correct encoding
-    $packages = Get-Content -Path $packagesFilePath -Encoding UTF8
+    if ($Incremental) {
+        $lastProcessedPackageLines = if (Test-Path $lastProcessedFilePath) {
+            Get-Content -Path $lastProcessedFilePath -Encoding UTF8 | Where-Object {
+                # Remove lines that are empty or start with a comment character (#)
+                -not [string]::IsNullOrWhiteSpace($_) -and -not $_.Trim().StartsWith("#")
+            }
+        } else { @() }
 
-    # Loop through each package in the file
-    foreach ($package in $packages) {
-        # Skip empty or whitespace-only lines
-        if ([string]::IsNullOrWhiteSpace($package) -or $package.Trim().StartsWith("#")) {
-            continue
-        }
+        $packageLines = Compare-Object $lastProcessedPackageLines $packageLines | 
+            Where-Object { $_.SideIndicator -eq "=>" } | 
+            Select-Object -ExpandProperty InputObject
+    }
+
+    # Process the updated packages
+    foreach ($packageLine in $packageLines) {
         try {
-            Install-Package -PackageLine $package
+            Install-Package $packageLine
         } catch {
             Log-Message "Failed to process package from line '$package': $($_.Exception.Message)" -LogLevel "Error"
         }
     }
 
+    # Save the current state if the run was successful
+    Set-Content -Path $lastProcessedFilePath -Value (Get-Content -Path $PackagesFilePath -Encoding UTF8)
     Log-Message "All applicable packages have been processed." -LogLevel "Info"
 }
+

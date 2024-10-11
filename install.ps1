@@ -12,6 +12,9 @@ Optional path to the packages file. If not specified, it uses the path from the 
 .PARAMETER ConfigFile
 Optional path to the configuration file. If not specified, it defaults to './config.yaml'.
 
+.PARAMETER Incremental
+When specified, the script will process only changed lines from the packages file compared to the last successful run.
+
 .PARAMETER Help
 Displays this help message.
 
@@ -25,6 +28,10 @@ Runs the script using the default configuration and packages files.
 
 Runs the script using the specified packages and configuration files.
 
+.EXAMPLE
+.\InstallPackages.ps1 -Incremental
+
+Runs the script in incremental mode, only processing changed packages.
 #>
 
 param (
@@ -35,6 +42,9 @@ param (
     [Parameter(Mandatory = $false)]
     [ValidateNotNullOrEmpty()]
     [string]$ConfigFile = ".\config.yaml",
+
+    [Parameter(Mandatory = $false, HelpMessage = "Runs in incremental mode.")]
+    [switch]$Incremental,
 
     [Parameter(Mandatory = $false, HelpMessage = "Displays help information.")]
     [switch]$Help
@@ -57,8 +67,11 @@ if (-not (Test-PowerShell7 -VerboseCheck)) {
 }
 
 # Load Config
-$configFilePath = "$PSScriptRoot\config.yaml"
+$configFilePath = if ($ConfigFile) { Resolve-Path -Path $ConfigFile } else { "$PSScriptRoot\config.yaml" }
 $config = Load-ConfigFromYaml -ConfigFilePath $configFilePath
 
+# Resolve the packages file path
+$packagesFilePath = if ($PackagesFile) { Resolve-Path -Path $PackagesFile } else { $config.packages.package_file_path }
+
 # Main execution logic
-Install-AllPackages
+Install-AllPackages -PackagesFilePath $packagesFilePath -Incremental:$Incremental

@@ -1,10 +1,14 @@
 # Configuration for Package Install Script
 
-# Paths for external scripts
+# Paths for external scripts and temporary files
 paths:
   # Directory containing custom scripts to execute during the setup process
   # Example: './scripts' where additional configuration scripts are stored
   scripts_folder_path: "./scripts"
+
+  # Directory for storing temporary files like last processed packages and hash files
+  # Example: './temp' or use system's temp folder with $env:TEMP
+  temp_files_path: "./temp"
 
 # Winget package manager configuration
 winget:
