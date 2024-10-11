@@ -15,6 +15,8 @@ admin script Install-LenovoUpdateTool
 winget AgileBits.1Password
 choco googlechrome
 choco 7zip
+# WhatsApp ID
+winget 9NKSQGP7F2NH
 
 # Software Development Tools
 winget Microsoft.VisualStudioCode
