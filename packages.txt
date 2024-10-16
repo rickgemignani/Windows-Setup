@@ -18,8 +18,11 @@ winget ExpressVPN.ExpressVPN
 winget AgileBits.1Password
 choco googlechrome
 choco 7zip
+
+# Communication Software
 # WhatsApp ID
 winget 9NKSQGP7F2NH
+winget SlackTechnologies.Slack
 
 # Software Development Tools
 winget Microsoft.VisualStudioCode
