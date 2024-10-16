@@ -11,6 +11,9 @@ admin script Setup-WindowsUpdate -UpdateFrequency "Weekly" -UpdateTypes "Critica
 # Install Lenovo Update Software 
 admin script Install-LenovoUpdateTool
 
+# Security
+winget ExpressVPN.ExpressVPN
+
 # Basic needs software
 winget AgileBits.1Password
 choco googlechrome
