@@ -27,6 +27,8 @@ winget 9NT1R1C2HH7J
 # Communication Software
 # WhatsApp ID
 winget 9NKSQGP7F2NH
+# WhatsApp Beta ID
+winget 9NBDXK71NK08
 admin script CreateUser -UserName "JohnDoe" -Password "1" -FullName "John Doe"
 winget SlackTechnologies.Slack
 
