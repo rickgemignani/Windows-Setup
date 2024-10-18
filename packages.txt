@@ -18,10 +18,12 @@ winget ExpressVPN.ExpressVPN
 winget AgileBits.1Password
 choco googlechrome
 choco 7zip
+winget Microsoft.OpenJDK.17
 
 # Communication Software
 # WhatsApp ID
 winget 9NKSQGP7F2NH
+admin script CreateUser -UserName "JohnDoe" -Password "1" -FullName "John Doe"
 winget SlackTechnologies.Slack
 
 # Software Development Tools
