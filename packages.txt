@@ -20,6 +20,10 @@ choco googlechrome
 choco 7zip
 winget Microsoft.OpenJDK.17
 
+# AI
+# ChatGPT
+winget 9NT1R1C2HH7J
+
 # Communication Software
 # WhatsApp ID
 winget 9NKSQGP7F2NH
