@@ -23,6 +23,9 @@ winget Microsoft.OpenJDK.17
 winget Obsidian.Obsidian
 winget Notion.Notion
 
+#Organization
+winget Doist.Todoist
+
 # AI
 # ChatGPT
 winget 9NT1R1C2HH7J
