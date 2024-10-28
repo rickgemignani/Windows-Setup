@@ -6,6 +6,7 @@ admin script Update-ChocoPackages
 
 # Update Windows 
 admin script Install-PowerShellModule PSWindowsUpdate
+admin script Install-PowerShellModule powershell-yaml
 admin script Setup-WindowsUpdate -UpdateFrequency "Weekly" -UpdateTypes "Critical,Security,Feature"
 
 # Install Lenovo Update Software 
