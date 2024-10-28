@@ -20,6 +20,7 @@ winget AgileBits.1Password
 choco googlechrome
 choco 7zip
 winget Microsoft.OpenJDK.17
+winget Obsidian.Obsidian
 
 # AI
 # ChatGPT
