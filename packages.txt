@@ -21,6 +21,7 @@ choco googlechrome
 choco 7zip
 winget Microsoft.OpenJDK.17
 winget Obsidian.Obsidian
+winget Notion.Notion
 
 # AI
 # ChatGPT
