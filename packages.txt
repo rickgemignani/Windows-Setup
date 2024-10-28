@@ -48,3 +48,6 @@ user script Set-PowerShell7Default
 
 # eye candy
 choco jbs
+
+# Games
+winget Valve.Steam
