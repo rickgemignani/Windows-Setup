@@ -15,6 +15,9 @@ Optional path to the configuration file. If not specified, it defaults to './con
 .PARAMETER Incremental
 When specified, the script will process only changed lines from the packages file compared to the last successful run.
 
+.PARAMETER PackageLine
+Optional single line for package installation. When specified, only this package will be installed.
+
 .PARAMETER Help
 Displays this help message.
 
@@ -32,6 +35,11 @@ Runs the script using the specified packages and configuration files.
 .\InstallPackages.ps1 -Incremental
 
 Runs the script in incremental mode, only processing changed packages.
+
+.EXAMPLE
+.\InstallPackages.ps1 -PackageLine "example-package"
+
+Installs only the specified package.
 #>
 
 param (
@@ -46,6 +54,9 @@ param (
     [Parameter(Mandatory = $false, HelpMessage = "Runs in incremental mode.")]
     [switch]$Incremental,
 
+    [Parameter(Mandatory = $false, HelpMessage = "Single package to install.")]
+    [string]$PackageLine,
+
     [Parameter(Mandatory = $false, HelpMessage = "Displays help information.")]
     [switch]$Help
 )
@@ -55,23 +66,37 @@ if ($Help) {
     exit
 }
 
-# Import the library
+# Import necessary libraries
 $libraryPath = Join-Path $PSScriptRoot "libraries"
 . "$libraryPath\PowerShell.ps1"
 . "$libraryPath\Config.ps1"
 . "$libraryPath\Install.ps1"
 
-# Test if we are in PowerShell7
+# Ensure PowerShell 7+
 if (-not (Test-PowerShell7 -VerboseCheck)) {
+    Write-Error "This script requires PowerShell 7 or later."
     exit
 }
 
-# Load Config
+# Load configuration
 $configFilePath = if ($ConfigFile) { Resolve-Path -Path $ConfigFile } else { "$PSScriptRoot\config.yaml" }
 $config = Load-ConfigFromYaml -ConfigFilePath $configFilePath
 
-# Resolve the packages file path
+# Resolve packages file path
 $packagesFilePath = if ($PackagesFile) { Resolve-Path -Path $PackagesFile } else { $config.packages.package_file_path }
 
-# Main execution logic
-Install-AllPackages -PackagesFilePath $packagesFilePath -Incremental:$Incremental
+# Execute installation logic
+try {
+    if ($PackageLine) {
+        # Install only the specified package line
+        Write-Output "Installing package: $PackageLine"
+        Install-Package $PackageLine
+    } else {
+        # Install all packages from the packages file
+        Write-Output "Installing all packages from: $packagesFilePath"
+        Install-AllPackages -PackagesFilePath $packagesFilePath -Incremental:$Incremental
+    }
+} catch {
+    Write-Error "An error occurred during installation: $_"
+    exit 1
+}
