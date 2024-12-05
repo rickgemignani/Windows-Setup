@@ -23,6 +23,7 @@ winget Microsoft.OpenJDK.17
 winget Obsidian.Obsidian
 winget Notion.Notion
 winget Discord.Discord
+winget RazerInc.RazerInstaller
 
 #Organization
 winget Doist.Todoist
